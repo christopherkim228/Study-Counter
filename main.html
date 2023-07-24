@@ -3,19 +3,38 @@
 <head>
     <title>문제수 카운터</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="counter.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
+<input id = "fileInput" type="file">
+<input type="text" id="datepicker">
 <div id="main">
-
-    
-
+    <div id="korean" class="big-container">
+        <h1 style = "color: #c72e2e" class = "subject">국어</h1>
+        <h2 id = "koreanNumber" class = "number">0</h2>
+        <h3 id = "koreanDelta" class = "delta">+0</h3>
+    </div>
+    <div id="math" class="big-container">
+        <h1 style = "color: #2d47b0" class = "subject">수학</h1>
+        <h2 id = "mathNumber" class = "number">0</h2>
+        <h3 id = "mathDelta" class = "delta">+0</h3>
+    </div>
+    <div id="english" class="big-container">
+        <h1 style = "color: #327b3f" class = "subject">영어</h1>
+        <h2 id = "englishNumber" class = "number">0</h2>
+        <h3 id = "englishDelta" class = "delta">+0</h3>
+    </div>
 
 </div>
+<script src="counter.js"></script>
 </body>
 </html>
