@@ -1,5 +1,6 @@
 var rawExcel;
 var processedJson;
+var startDate;
 var currentDate;
 var convertedDate;
 
@@ -26,10 +27,10 @@ function readExcel(e) {
             let rows = XLSX.utils.sheet_to_json(workBook.Sheets[sheetName]);
             processedJson = rows;
             console.log(JSON.stringify(rows));
+            let startDate = 25569.0 + ((processedJson[0].__EMPTY - ((new Date()).getTimezoneOffset() * 60 * 1000)) / (1000 * 60 * 60 * 24));
         })
     };
     reader.readAsBinaryString(input.files[0]);
-    updateNumbers();
 }
 
 // let date = new Date();
@@ -39,7 +40,7 @@ function updateNumbers() {
     let korNum = 0;
     let matNum = 0;
     let engNum = 0;
-    let c = convertedDate - 45127;
+    let c = convertedDate - startDate;
     for(let i=0; i <= c; i++) {
         korNum += processedJson[i].국어;
         matNum += processedJson[i].수학;
